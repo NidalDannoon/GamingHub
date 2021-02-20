@@ -108,7 +108,7 @@ function ProductCategories(props) {
     {
       url:
         'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
-      title: 'Puzzle',
+      title: 'Adventure',
       width: '38%',
     },
     {
@@ -120,13 +120,13 @@ function ProductCategories(props) {
     {
       url:
         'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
-      title: 'Girls',
+      title: 'Strategy',
       width: '24%',
     },
     {
       url:
         'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
-      title: 'GTA',
+      title: 'Survival',
       width: '40%',
     },
     {
@@ -138,7 +138,7 @@ function ProductCategories(props) {
     {
       url:
         'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
-      title: 'Stimulation',
+      title: 'Simulation',
       width: '40%',
     },
   ];

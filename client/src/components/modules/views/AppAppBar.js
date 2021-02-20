@@ -9,6 +9,7 @@ import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 const styles = (theme) => ({
   title: {
     fontSize: 24,
+    marginTop: 20,
   },
   placeholder: toolbarStyles(theme).root,
   toolbar: {
@@ -50,7 +51,7 @@ function AppAppBar(props) {
             className={classes.title}
             href="/"
           >
-            {'Gaming Hub'}
+            {<img width ="150px" height = "90px" src="https://i.imgur.com/K80CakF.png" alt="GamingHub" />}
           </Link>
           <div className={classes.right}>
             <Link
