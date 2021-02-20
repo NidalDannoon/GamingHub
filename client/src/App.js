@@ -8,6 +8,7 @@ import Privacy from './components/Privacy';
 import Terms from './components/Terms';
 
 import {Router} from '@reach/router'
+import PostDetails from './components/modules/views/PostDetails';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <SignUp path = "/signup"/>
         <SignIn path = "/signin"/>
         <ProductHero path = "/"/>
+        <PostDetails path = "/details"/>
         <Privacy path = "/privacy"/>
         <Terms path = "/terms"/>
       </Router>
