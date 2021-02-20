@@ -127,6 +127,8 @@ function PostDetails(props) {
           </CardContent>
       </Card>
       
+      {/* this is comments section */}
+
       <Card className={classes.root}>
         <CardContent>
           <CardHeader
@@ -176,6 +178,7 @@ function PostDetails(props) {
           </CardContent>
         </CardContent>
 
+            {/* this is comment posting section */}
 
         <CardContent>
           <form className={classes.root} noValidate autoComplete="off">

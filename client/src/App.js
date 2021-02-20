@@ -10,6 +10,7 @@ import {Router} from '@reach/router'
 import PostDetails from './components/modules/views/PostDetails';
 import PostForm from './components/PostForm';
 import About from './components/About';
+import CategoryPosts from './components/modules/views/CategoryPosts';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <SignUp path = "/signup"/>
         <SignIn path = "/signin"/>
         <ProductHero path = "/"/>
+        <CategoryPosts path = "/category/posts"/>
         <PostDetails path = "/details"/>
         <Privacy path = "/privacy"/>
         <PostForm path= "/new"/>
