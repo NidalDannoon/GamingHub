@@ -78,6 +78,16 @@ function PostForm() {
                     required
                   />
                 </Grid>
+                <Grid item xs={12} sm={12}>
+                  <Field
+                    component={RFTextField}
+                    autoComplete="title"
+                    fullWidth
+                    label="Title Description, max:250 char."
+                    name="title"
+                    required
+                  />
+                </Grid>
               </Grid>
               <Field
                 autoComplete="image"

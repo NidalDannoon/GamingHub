@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       maxWidth: "none",
       margin: '20px 0',
-      backgroundColor:'#fff3e4',
+      backgroundColor:'#eeebe6',
     },
     margin: {
       margin: theme.spacing(1),
@@ -53,6 +53,13 @@ const useStyles = makeStyles((theme) => ({
     avatar: {
       backgroundColor: red[500],
     },
+    img: {
+      width: 512,
+      margin: '15px auto',
+      display: 'block',
+      maxWidth: '100%',
+      maxHeight: '100%',
+    },
   }));
   
 
@@ -76,7 +83,7 @@ function PostDetails(props) {
           image={test}
           title="Paella dish"
         />
-        <Typography variant="h2" color="primary" component="h2">
+        <Typography variant="h3" color="primary" component="h3">
           <CardContent>
             Shrimp and Chorizo Paella
           </CardContent>
@@ -120,6 +127,9 @@ function PostDetails(props) {
               medium-low, add reserved shrimp and mussels, tucking them down into the rice, and cook
               again without stirring, until mussels have opened and rice is just tender, 5 to 7
               minutes more. (Discard any mussels that don’t open.)
+              <img className={classes.img} src="https://www.tech-mag.net/wp-content/uploads/2020/06/PubG-Mobile-APK.jpg"/>
+              <img className={classes.img} src="https://www.nintendo.com/content/dam/noa/en_US/games/switch/f/fortnite-switch/fortnite-switch-hero.jpg"/>
+              <img className={classes.img} src="https://cdn2.unrealengine.com/egs-amongus-innersloth-s1-2560x1440-675403774.jpg"/>
             </Typography>
             <Typography>
               Set aside off of the heat to let rest for 10 minutes, and then serve.
