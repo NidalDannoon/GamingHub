@@ -8,6 +8,7 @@ import Archive from './components/Archive';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
 import {Router} from '@reach/router'
+import PostDetails from './components/modules/views/PostDetails';
 import PostForm from './components/PostForm';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -21,6 +22,7 @@ function App() {
         <SignIn path = "/signin"/>
 		<Archive path = "/archive"/>
         <ProductHero path = "/"/>
+        <PostDetails path = "/details"/>
         <Privacy path = "/privacy"/>
         <PostForm path= "/new"/>
 		<Contact path = "/contact"/>
