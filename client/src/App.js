@@ -6,8 +6,9 @@ import SignUp from './components/SignUp';
 import ProductHero from './components/modules/views/ProductHero';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
-
 import {Router} from '@reach/router'
+import PostForm from './components/PostForm';
+import About from './components/About';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <SignIn path = "/signin"/>
         <ProductHero path = "/"/>
         <Privacy path = "/privacy"/>
+        <PostForm path= "/new"/>
+        <About path= "/about"/>
         <Terms path = "/terms"/>
       </Router>
     </React.Fragment>
