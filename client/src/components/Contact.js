@@ -15,6 +15,8 @@ import { email, required } from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
+import {Button} from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -46,6 +48,19 @@ function Contact() {
           <Typography variant="h3" gutterBottom marked="center" align="center">
             Contact Us
           </Typography>
+		            <form className={classes.root} noValidate autoComplete="off">
+            <TextField
+              id="outlined-multiline-static"
+              label="Message"
+              multiline
+              rows={2}
+              fullWidth
+              variant="outlined"
+            />
+            <Button className={classes.margin} variant="contained" color="primary">
+              Send
+            </Button>
+          </form>
       </AppForm>
 		  </Paper>
         </Grid>
