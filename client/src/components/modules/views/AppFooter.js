@@ -40,10 +40,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius:'25px',
     // backgroundColor: theme.palette.warning.main,
     marginRight: theme.spacing(1),
     '&:hover': {
-      backgroundColor: theme.palette.warning.dark,
+      backgroundColor: '#ff7c7c',
     },
   },
   list: {
@@ -99,7 +100,7 @@ export default function AppFooter() {
                 </a>
               </Grid>
               <Grid item>
-                <Copyright  />
+                <Copyright />
               </Grid>
             </Grid>
           </Grid>
