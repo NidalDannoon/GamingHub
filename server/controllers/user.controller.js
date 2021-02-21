@@ -27,6 +27,7 @@ module.exports.findSingleUser = (request, response) => {
 };
 
 module.exports.createUser = (request, response) => {
+
     User.create(request.body)
         .then(user => response.json({ msg: "success!", user: user }))
         .catch(err => response.status(400).json(err))
@@ -39,9 +40,12 @@ module.exports.createCategory = (request, response) => {
 };
 
 module.exports.createPost = (request, response) => {
-    User.create(request.body)
+    User.updateOne({_id: request.params.id}, {
+        posts: {$set:{title:request.params.title,content:request.params.content}
+        }
+    })
         .then(user => response.json({ msg: "success!", user: user }))
-        .catch(err => response.status(400).json(err))
+        .catch(err => res.json(err));
 };
 
 module.exports.registerUser = (request, response) => {

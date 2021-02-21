@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 
 const CommentSchema = new mongoose.Schema({
-  desciption:String,
+  content:String,
 }, {timestamps: true})
 
 const PostSchema = new mongoose.Schema({
@@ -12,9 +12,8 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: [true, "Post title is required"]
   },
-  titleDiscreption:{
+  content:{
     type: String,
-    maxlength: [250, "title discreption must be below 250 characters"]
   },
   comment:[CommentSchema]
 }, {timestamps: true})

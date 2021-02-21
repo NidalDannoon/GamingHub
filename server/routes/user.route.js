@@ -9,6 +9,6 @@ module.exports = (app) =>{
     app.get("/api/users", UserController.getAllUsers);
     app.post("/api/createu", UserController.createUser);
     app.post("/api/createc", UserController.createCategory);
-    app.post("/api/createp", UserController.createPost);
+    app.post("/api/user/:id/createp", UserController.createPost);
 
 }
