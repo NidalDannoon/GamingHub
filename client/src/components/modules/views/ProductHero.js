@@ -65,9 +65,7 @@ function ProductHero(props) {
         Discover the experience
       </Typography>
     </ProductHeroLayout>
-    <ProductValues  />
     <ProductCategories/>
-    <ProductHowItWorks/>
     <ProductCTA  />
     <ProductSmokingHero  />
     <AppFooter/>

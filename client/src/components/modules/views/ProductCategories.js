@@ -5,6 +5,7 @@ import ButtonBase from '@material-ui/core/ButtonBase';
 import Container from '@material-ui/core/Container';
 import Typography from '../components/Typography';
 
+import Link from '@material-ui/core/Link';
 const styles = (theme) => ({
   root: {
     marginTop: theme.spacing(8),
@@ -150,13 +151,14 @@ function ProductCategories(props) {
       </Typography>
       <div className={classes.images}>
         {images.map((image) => (
-          <ButtonBase
+          <ButtonBase 
             key={image.title}
             className={classes.imageWrapper}
             style={{
               width: image.width,
             }}
           >
+            <Link href="/category/posts">
             <div
               className={classes.imageSrc}
               style={{
@@ -175,6 +177,7 @@ function ProductCategories(props) {
                 <div className={classes.imageMarked} />
               </Typography>
             </div>
+            </Link>
           </ButtonBase>
         ))}
       </div>
