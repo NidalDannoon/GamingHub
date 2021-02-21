@@ -89,10 +89,13 @@ export default function AppFooter() {
             >
               <Grid item className={classes.icons}>
                 <a href="#" className={classes.icon}>
-                  <img width ="50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Facebook_icon.svg/256px-Facebook_icon.svg.png" alt="Facebook" />
+                  <img width ="50px" src="https://i.imgur.com/O9PUPmx.png" alt="Facebook" />
                 </a>
                 <a href="#" className={classes.icon}>
-                  <img width ="50px" src="https://icons.iconarchive.com/icons/xenatt/minimalism/256/App-Twitter-icon.png" alt="Twitter" />
+                  <img width ="50px" src="https://i.imgur.com/dfxFBqt.png" alt="Twitter" />
+                </a>
+                <a href="#" className={classes.icon}>
+                  <img width ="50px" src="https://i.imgur.com/I3lDXyo.png" alt="Instagram" />
                 </a>
               </Grid>
               <Grid item>

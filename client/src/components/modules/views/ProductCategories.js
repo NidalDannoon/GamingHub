@@ -89,55 +89,55 @@ function ProductCategories(props) {
   const images = [
     {
       url:
-        'https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80',
+        'https://i.pinimg.com/originals/af/8a/bb/af8abb841e3d18fb371c802f9f2b941e.png?auto=format&fit=crop&w=400&q=80',
       title: 'Aracade',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80',
+        'https://wallpaperaccess.com/full/2044897.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Action',
       width: '20%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=400&q=80',
+        'https://wallpaperaccess.com/full/2529013.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Racing',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1453747063559-36695c8771bd?auto=format&fit=crop&w=400&q=80',
+        'https://gamerescape.com/wp-content/uploads/2017/10/Middle-earth%E2%84%A2_-Shadow-of-War%E2%84%A2_20171015175644.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Adventure',
       width: '38%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1523309996740-d5315f9cc28b?auto=format&fit=crop&w=400&q=80',
+        'https://cdn.wallpapersafari.com/14/98/fFvCO1.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Online Multiplayer',
       width: '38%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80',
+        'https://assets.rockpapershotgun.com/images/2020/01/Sid-Meiers-Civilization-VI-Best-Strategy-Games-2020.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Strategy',
       width: '24%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1506941433945-99a2aa4bd50a?auto=format&fit=crop&w=400&q=80',
+        'https://wallpapercave.com/wp/wp2473678.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Survival',
       width: '40%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1533727937480-da3a97967e95?auto=format&fit=crop&w=400&q=80',
+        'https://www.wallpapertip.com/wmimgs/173-1738924_crysis-remastered.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Shooting',
       width: '20%',
     },
     {
       url:
-        'https://images.unsplash.com/photo-1518136247453-74e7b5265980?auto=format&fit=crop&w=400&q=80',
+        'https://cdn57.androidauthority.net/wp-content/uploads/2019/09/Pocket-City-best-simulation-games-for-Android.jpg?auto=format&fit=crop&w=400&q=80',
       title: 'Simulation',
       width: '40%',
     },

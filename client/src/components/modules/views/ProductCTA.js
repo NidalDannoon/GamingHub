@@ -21,7 +21,7 @@ const styles = (theme) => ({
   card: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: theme.palette.error.main,
+    background: 'linear-gradient(to right, #b92b27, #1565c0);',
     padding: theme.spacing(8, 3),
   },
   cardContent: {
