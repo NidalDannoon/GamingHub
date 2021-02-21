@@ -40,9 +40,10 @@ module.exports.createCategory = (request, response) => {
 };
 
 module.exports.createPost = (request, response) => {
-    User.updateOne({_id: request.params.id}, {
-        posts: {$set:{title:request.params.title,content:request.params.content}
-        }
+
+    console.log(request.body.title);
+    User.findOneAndUpdate({_id: request.params.id},{
+        $push: { posts: {title:request.body.title, content:request.body.content} }
     })
         .then(user => response.json({ msg: "success!", user: user }))
         .catch(err => res.json(err));
