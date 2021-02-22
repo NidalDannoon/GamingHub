@@ -1,6 +1,7 @@
 import withRoot from './modules/withRoot';
 // --- Post bootstrap -----
 import React from 'react';
+import ContactForm from './ContactForm';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -40,37 +41,29 @@ function Contact() {
   return (
     <React.Fragment>
       <AppAppBar />
-      <Container maxWidth="lg">
-      <Grid container spacing={1}>
+		<Container maxWidth="lg">
+		<Grid container spacing={1}>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-		       <AppForm>
+		    <AppForm>
           <Typography variant="h3" gutterBottom marked="center" align="center">
             Contact Us
           </Typography>
-		            <form className={classes.root} noValidate autoComplete="off">
-            <TextField
-              id="outlined-multiline-static"
-              label="Message"
-              multiline
-              rows={2}
-              fullWidth
-              variant="outlined"
-            />
-            <Button className={classes.margin} variant="contained" color="primary">
-              Send
-            </Button>
-          </form>
+		<ContactForm />
       </AppForm>
 		  </Paper>
         </Grid>
         <Grid item xs={6}>
           <Paper className={classes.paper}>
-		  		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6049.881319200985!2d-74.00151372674895!3d40.69730452928296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a47df06b185%3A0xc889234bc07c42ee!2sBrooklyn+Heights%2C+Brooklyn%2C+NY+11201!5e0!3m2!1sen!2sus!4v1461598289488" width="100%" height="350" frameborder="0" allowfullscreen></iframe>
-
+		   <AppForm>
+          <Typography variant="h3" gutterBottom marked="center" align="center">
+            Find Us on Map
+          </Typography>
+		  		  <iframe src="https://maps.google.com/maps?width=100%25&amp;height=285&amp;hl=en&amp;q=Ougarit%20Building,%201st%20Floor,%20Ramallah,%20Al-Bireh+(AXSOS%20AG)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="285" frameborder="0" allowfullscreen></iframe>
+	   </AppForm>
 		  </Paper>
-        </Grid>
       </Grid>
+	  </Grid>
       </Container>
       <AppFooter />
     </React.Fragment>
