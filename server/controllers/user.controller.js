@@ -2,6 +2,10 @@ const {User, Category, Comment} = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
+// main queries
+// 
+
+
 module.exports.getAllUsers = (request, response) => {
     User.find()
         .then(allUsers => response.json({Users: allUsers}))
@@ -27,7 +31,6 @@ module.exports.findSingleUser = (request, response) => {
 };
 
 module.exports.createUser = (request, response) => {
-
     User.create(request.body)
         .then(user => response.json({ msg: "success!", user: user }))
         .catch(err => response.status(400).json(err))
@@ -43,7 +46,7 @@ module.exports.createPost = (request, response) => {
 
     console.log(request.body.title);
     User.findOneAndUpdate({_id: request.params.id},{
-        $push: { posts: {title:request.body.title, content:request.body.content} }
+        $push: { posts: {title:request.body.title, content:request.body.content, category:{title:request.body.categoryTitle} }}
     })
         .then(user => response.json({ msg: "success!", user: user }))
         .catch(err => res.json(err));
@@ -66,21 +69,6 @@ module.exports.registerUser = (request, response) => {
         .catch(err => response.status(400).json(err))
 };
 
-
-module.exports.createBook = (request, response) => {
-    const { name } = request.body;
-    Book.create({
-        name,
-    })
-        .then(book => response.json(book))
-        .catch(err => response.status(400).json(err))
-};
-
-module.exports.getAllBooks = (request, response) => {
-    Book.find()
-        .then(allBooks => response.json({books: allBooks}))
-        .catch(err => response.json({ message: "Something went wrong", error: err}))
-};
 
 module.exports.logIn = async (request, response) =>{
     const user = await User.findOne({ email: request.body.email });

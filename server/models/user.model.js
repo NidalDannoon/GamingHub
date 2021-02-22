@@ -1,31 +1,35 @@
- 
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+// const CategorySchema  = require("./category.model");
 
 
 const CommentSchema = new mongoose.Schema({
   content:String,
 }, {timestamps: true})
 
-const PostSchema = new mongoose.Schema({
+const CategorySchema = new mongoose.Schema({
+  title:{
+    type: String,
+    required: [true, "Category name is required"]
+  },
+  image:String,
+}, {timestamps: true})
+
+
+
+const PostSchema = new mongoose.Schema({ 
   title:{
     type: String,
     required: [true, "Post title is required"]
   },
+  image:{type:String},
   content:{
     type: String,
   },
-  comment:[CommentSchema]
+  comment:[CommentSchema],
+  category:[CategorySchema]
 }, {timestamps: true})
 
-const CategorySchema = new mongoose.Schema({
-  name:{
-    type: String,
-    required: [true, "Category name is required"]
-  },
-  picture:String,
-  posts:[PostSchema]
-}, {timestamps: true})
 
 
 const UserSchema = new mongoose.Schema({
@@ -72,6 +76,6 @@ UserSchema.pre('save', function(next) {
       });
   });
 
-module.exports.User = mongoose.model("User", UserSchema);
-module.exports.Category = mongoose.model("Category", CategorySchema);
-module.exports.Comment = mongoose.model("Comment", CommentSchema);
+  module.exports.User = mongoose.model("User", UserSchema);
+  module.exports.Category = mongoose.model("Category", CategorySchema);  
+  module.exports.Comment = mongoose.model("Comment", CommentSchema);
