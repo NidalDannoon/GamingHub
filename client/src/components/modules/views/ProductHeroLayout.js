@@ -7,7 +7,7 @@ import ArrowIcon from '@material-ui/icons/ArrowDownward';
 const styles = (theme) => ({
   root: {
     color: theme.palette.common.white,
-    position: 'relative',
+    // position: 'relative',
     display: 'flex',
     alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
