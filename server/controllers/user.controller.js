@@ -1,4 +1,4 @@
-const {User, Category, Comment} = require("../models/user.model");
+const {User, Category, Comment,Post} = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -13,8 +13,8 @@ module.exports.getAllUsers = (request, response) => {
 };
 
 module.exports.getAllPosts = (request, response) => {
-    Book.find()
-        .then(allBooks => response.json({books: allBooks}))
+    Post.find({category:{title:request.params.category}})
+        .then(allPosts => response.json({posts: allPosts}))
         .catch(err => response.json({ message: "Something went wrong", error: err}))
 };
 
@@ -30,11 +30,6 @@ module.exports.findSingleUser = (request, response) => {
         .catch(err => response.json({ message: "Something went wrong", error: err}));
 };
 
-module.exports.createUser = (request, response) => {
-    User.create(request.body)
-        .then(user => response.json({ msg: "success!", user: user }))
-        .catch(err => response.status(400).json(err))
-};
 
 module.exports.createCategory = (request, response) => {
     Category.create(request.body)
@@ -52,12 +47,22 @@ module.exports.createPost = (request, response) => {
         .catch(err => res.json(err));
 };
 
+module.exports.createComment = (request, response) => {
+
+    Post.findOne({_id: request.params.id},{
+        $push: { comment:{content:request.body.content, userStamp:request.params.uId}}
+    })
+        .then(user => response.json({ msg: "success!", user: user }))
+        .catch(err => res.json(err));
+};
+
+
 module.exports.registerUser = (request, response) => {
     User.create(request.body)
         .then(user => {
             const payload = {
                 id: user._id
-              };
+            };
             console.log("-**-/-/-/-*/-/-*/-*/-/-*/-*/-/ is there anything here ?"+user)
             const userToken = jwt.sign(payload, process.env.FIRST_SECRET_KEY);
             response
@@ -71,7 +76,7 @@ module.exports.registerUser = (request, response) => {
 
 
 module.exports.logIn = async (request, response) =>{
-    const user = await User.findOne({ email: request.body.email });
+    const user = await User.findOne({ nEmail: request.body.nEmail });
  
     if(user === null) {
         // email not found in users collection
@@ -84,7 +89,7 @@ module.exports.logIn = async (request, response) =>{
  
     if(!correctPassword) {
         // password wasn't a match!
-        return response.sendStatus(400);
+        return response.sendStatus(404);
     }
  
     // if we made it this far, the password was correct

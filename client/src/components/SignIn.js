@@ -1,6 +1,6 @@
 import withRoot from './modules/withRoot';
 // --- Post bootstrap -----
-import React from 'react';
+import React , {useState} from 'react';
 import { Field, Form, FormSpy } from 'react-final-form';
 import { makeStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
@@ -12,6 +12,8 @@ import { email, required } from './modules/form/validation';
 import RFTextField from './modules/form/RFTextField';
 import FormButton from './modules/form/FormButton';
 import FormFeedback from './modules/form/FormFeedback';
+import {navigate} from '@reach/router';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -29,9 +31,8 @@ const useStyles = makeStyles((theme) => ({
 function SignIn() {
   const classes = useStyles();
   const [sent, setSent] = React.useState(false);
-  // const [email, setEmail] = React.useState('')
-  // const [password, setPassword] = React.useState('')
-
+  const [nEmail, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const validate = (values) => {
     const errors = required(['email', 'password'], values);
@@ -46,7 +47,13 @@ function SignIn() {
     return errors;
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    axios.post('http://localhost:8000/api/login', {
+        nEmail,
+        password
+    })
+    .then( res => navigate("/"))
+    .catch(err => console.log(err))
     setSent(true);
   };
 
@@ -66,8 +73,8 @@ function SignIn() {
           </Typography>
         </React.Fragment>
         <Form onSubmit={handleSubmit} subscription={{ submitting: true }} validate={validate}>
-          {({ handleSubmit2, submitting }) => (
-            <form onSubmit={handleSubmit2} className={classes.form} noValidate>
+          {({ handleSubmit, submitting }) => (
+            <form onSubmit={handleSubmit} className={classes.form} noValidate>
               <Field
                 autoComplete="email"
                 autoFocus
@@ -79,7 +86,8 @@ function SignIn() {
                 name="email"
                 required
                 size="large"
-                
+                inputOnChange={ (e) => setEmail(e.target.value) }
+                value = {nEmail}
               />
               <Field
                 fullWidth
@@ -92,6 +100,8 @@ function SignIn() {
                 label="Password"
                 type="password"
                 margin="normal"
+                inputOnChange={(e) => setPassword(e.target.value)} 
+                value= {password}
               />
               <FormSpy subscription={{ submitError: true }}>
                 {({ submitError }) =>

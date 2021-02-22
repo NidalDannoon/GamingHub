@@ -6,6 +6,7 @@ function RFTextField(props) {
   const {
     autoComplete,
     input,
+    inputOnChange,
     InputProps,
     meta: { touched, error, submitError },
     ...other
@@ -20,8 +21,13 @@ function RFTextField(props) {
         inputProps: {
           autoComplete,
         },
+        onChange: e => {
+          input.onChange(e);
+          inputOnChange && inputOnChange(e);
+      },
         ...InputProps,
       }}
+      
       helperText={touched ? error || submitError : ''}
     />
   );
