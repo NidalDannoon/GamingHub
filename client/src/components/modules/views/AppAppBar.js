@@ -28,7 +28,6 @@ const styles = (theme) => ({
   },
   rightLink: {
     fontSize: 16,
-    color: theme.palette.common.white,
     marginLeft: theme.spacing(3),
   },
   linkSecondary: {
@@ -41,8 +40,8 @@ function AppAppBar(props) {
 
   return (
     <div>
-      <AppBar position="fixed">
-        <Toolbar className={classes.toolbar}>
+      <AppBar position="fixed" color="transparent" style={{display:'flex', justifyContent:'spaceBetween' ,boxShadow: 'none', height:'100px'}}>
+        <Toolbar style={{backgroundColor:"rgba(255, 255, 255, 0.125)",height:'100px'}} className={classes.toolbar}>
           <div className={classes.left} />
           <Link
             variant="h6"
@@ -51,11 +50,11 @@ function AppAppBar(props) {
             className={classes.title}
             href="/"
           >
-            {<img width ="150px" height = "90px" src="https://i.imgur.com/K80CakF.png" alt="GamingHub" />}
+            {<img style={{marginBottom:'0.6rem'}} height = "90px" src="https://i.imgur.com/ZxlQ2Te.png" alt="GamingHub" />}
           </Link>
           <div className={classes.right}>
             <Link
-              color="inherit"
+              color="white"
               variant="h6"
               underline="none"
               className={classes.rightLink}

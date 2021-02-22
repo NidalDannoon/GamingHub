@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
 function SignIn() {
   const classes = useStyles();
   const [sent, setSent] = React.useState(false);
+  // const [email, setEmail] = React.useState('')
+  // const [password, setPassword] = React.useState('')
+
 
   const validate = (values) => {
     const errors = required(['email', 'password'], values);
@@ -76,6 +79,7 @@ function SignIn() {
                 name="email"
                 required
                 size="large"
+                
               />
               <Field
                 fullWidth

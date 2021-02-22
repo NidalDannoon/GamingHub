@@ -4,6 +4,7 @@ import React from 'react';
 import TextField from './modules/components/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import MenuItem from '@material-ui/core/MenuItem';
 import Link from '@material-ui/core/Link';
 import { Field, Form, FormSpy } from 'react-final-form';
 import Typography from './modules/components/Typography';
@@ -78,7 +79,7 @@ function PostForm() {
                     required
                   />
                 </Grid>
-                <Grid item xs={12} sm={12}>
+                {/* <Grid item xs={12} sm={12}>
                   <Field
                     component={RFTextField}
                     autoComplete="title"
@@ -87,8 +88,22 @@ function PostForm() {
                     name="title"
                     required
                   />
-                </Grid>
+                </Grid> */}
               </Grid>
+              <br/>
+              <Grid item xs={12} sm={12}>
+              <TextField fullWidth id="select" label="Category*" select>
+                  <MenuItem value="arcade">Arcade</MenuItem>
+                  <MenuItem value="adventure">Adventure</MenuItem>
+                  <MenuItem value="action">Action</MenuItem>
+                  <MenuItem value="shooting">Shooting</MenuItem>
+                  <MenuItem value="simulation">Simulation</MenuItem>
+                  <MenuItem value="online-multiplayer">Online Multiplayer</MenuItem>
+                  <MenuItem value="racing">Racing</MenuItem>
+                  <MenuItem value="survival">Survival</MenuItem>
+                  <MenuItem value="strategy">Strategy</MenuItem>
+                </TextField>
+                </Grid>
               <Field
                 autoComplete="image"
                 component={RFTextField}
