@@ -7,7 +7,6 @@ module.exports = (app) =>{
     app.get("/api/categories", UserController.getAllCategories);
     app.get("/api/posts", UserController.getAllPosts);
     app.get("/api/users", UserController.getAllUsers);
-    app.post("/api/createu", UserController.createUser);
     app.post("/api/createc", UserController.createCategory);
     app.post("/api/user/:id/createp", UserController.createPost);
 

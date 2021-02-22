@@ -30,11 +30,6 @@ module.exports.findSingleUser = (request, response) => {
         .catch(err => response.json({ message: "Something went wrong", error: err}));
 };
 
-module.exports.createUser = (request, response) => {
-    User.create(request.body)
-        .then(user => response.json({ msg: "success!", user: user }))
-        .catch(err => response.status(400).json(err))
-};
 
 module.exports.createCategory = (request, response) => {
     Category.create(request.body)
@@ -57,7 +52,7 @@ module.exports.registerUser = (request, response) => {
         .then(user => {
             const payload = {
                 id: user._id
-              };
+            };
             console.log("-**-/-/-/-*/-/-*/-*/-/-*/-*/-/ is there anything here ?"+user)
             const userToken = jwt.sign(payload, process.env.FIRST_SECRET_KEY);
             response
@@ -71,7 +66,7 @@ module.exports.registerUser = (request, response) => {
 
 
 module.exports.logIn = async (request, response) =>{
-    const user = await User.findOne({ email: request.body.email });
+    const user = await User.findOne({ nEmail: request.body.nEmail });
  
     if(user === null) {
         // email not found in users collection
@@ -84,7 +79,7 @@ module.exports.logIn = async (request, response) =>{
  
     if(!correctPassword) {
         // password wasn't a match!
-        return response.sendStatus(400);
+        return response.sendStatus(404);
     }
  
     // if we made it this far, the password was correct

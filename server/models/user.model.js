@@ -41,7 +41,7 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Last name is required"]
       },
-      email: {
+      nEmail: {
         type: String,
         required: [true, "Email is required"],
         validate: {
