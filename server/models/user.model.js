@@ -77,5 +77,6 @@ UserSchema.pre('save', function(next) {
   });
 
   module.exports.User = mongoose.model("User", UserSchema);
-  module.exports.Category = mongoose.model("Category", CategorySchema);  
+  module.exports.Category = mongoose.model("Category", CategorySchema);
+  module.exports.Post = mongoose.model("Post", PostSchema);  
   module.exports.Comment = mongoose.model("Comment", CommentSchema);
