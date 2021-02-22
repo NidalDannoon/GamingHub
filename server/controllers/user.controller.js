@@ -1,4 +1,4 @@
-const {User, Category, Comment} = require("../models/user.model");
+const {User, Category, Comment,Post} = require("../models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -13,8 +13,8 @@ module.exports.getAllUsers = (request, response) => {
 };
 
 module.exports.getAllPosts = (request, response) => {
-    Book.find()
-        .then(allBooks => response.json({books: allBooks}))
+    Post.find({category:{title:request.params.category}})
+        .then(allPosts => response.json({posts: allPosts}))
         .catch(err => response.json({ message: "Something went wrong", error: err}))
 };
 
@@ -51,6 +51,16 @@ module.exports.createPost = (request, response) => {
         .then(user => response.json({ msg: "success!", user: user }))
         .catch(err => res.json(err));
 };
+
+module.exports.createComment = (request, response) => {
+
+    Post.findOne({_id: request.params.id},{
+        $push: { comment:{content:request.body.content, userStamp:request.params.uId}}
+    })
+        .then(user => response.json({ msg: "success!", user: user }))
+        .catch(err => res.json(err));
+};
+
 
 module.exports.registerUser = (request, response) => {
     User.create(request.body)
