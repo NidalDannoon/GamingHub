@@ -40,8 +40,8 @@ function AppAppBar(props) {
 
   return (
     <div>
-      <AppBar position="fixed" color="transparent" style={{display:'flex', justifyContent:'spaceBetween' ,boxShadow: 'none', height:'100px'}}>
-        <Toolbar style={{backgroundColor:"rgba(255, 255, 255, 0.125)",height:'100px'}} className={classes.toolbar}>
+      <AppBar position="relative" color="transparent" style={{display:'flex', justifyContent:'spaceBetween' ,boxShadow: 'none', height:'100px'}}>
+        <Toolbar style={{backgroundColor:"rgba(255, 255, 255, 0.125)",height:'100px',borderRadius:'10px'}} className={classes.toolbar}>
           <div className={classes.left} />
           <Link
             variant="h6"
