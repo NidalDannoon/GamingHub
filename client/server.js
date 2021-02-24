@@ -10,7 +10,7 @@ app.listen(5000, () => console.log("Server Running"));
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "email@gmail.com",
+    user: "systemhospital0@gmail.com",
     pass: "123456789",
   },
 });
@@ -28,7 +28,7 @@ router.post("/contact", (req, res) => {
   const message = req.body.message; 
   const mail = {
     from: name,
-    to: "email@gmail.com",
+    to: "systemhospital0@gmail.com",
     subject: "Contact Form Submission",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
