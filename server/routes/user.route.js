@@ -10,5 +10,5 @@ module.exports = (app) =>{
     app.post("/api/createc", UserController.createCategory);
     app.post("/api/user/:id/createp", UserController.createPost);
     app.post("/api/user/:uId/:pId/createco", UserController.createComment);
-
+    
 }
